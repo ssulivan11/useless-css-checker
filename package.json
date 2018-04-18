@@ -1,8 +1,9 @@
 {
   "name": "useless-css-checker",
   "version": "0.1.0",
+  "license": "MIT",
   "description": "Unused CSS Checker. Built off of PurifyCSS",
-  "main": "./lib/UselessCssChecker.js",
+  "main": "./dist/main.js",
   "scripts": {
     "test": "jest tests/index.spec.js",
     "build": "webpack -p",
