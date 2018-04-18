@@ -28,7 +28,7 @@ const getOptions = (options = {}) => {
 const minify = (cssSource, options) =>
   new CleanCss(options).minify(cssSource).styles
 
-const uselessCss = (searchThrough, css, options) => {
+const uselessCssChecker = (searchThrough, css, options) => {
   options = getOptions(options)
 
   const cssString = FileUtil.filesToSource(css, 'css')
@@ -70,4 +70,4 @@ const uselessCss = (searchThrough, css, options) => {
   return true
 }
 
-export default uselessCss
+export default uselessCssChecker

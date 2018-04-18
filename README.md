@@ -10,7 +10,7 @@ yarn add useless-css-checker -D
 ## Usage
 
 ```javascript
-const uselessCss = require('useless-css-checker')
+const uselessCssChecker = require('useless-css-checker')
 
 module.exports.csscheck = () => {
   const content = [
@@ -23,10 +23,16 @@ module.exports.csscheck = () => {
   ];
   const options = {
     rejected: true,
-    validationOutput: true,
-    validationProcessExit: true,
+    validationOutput: true, // gives output on rejections
+    validationProcessExit: true, // determines if process.exit
     whitelist: ['*white-list-testing*']
   }
-  uselessCss(content, css, options)
+  uselessCssChecker(content, css, options)
 }
 ```
+
+### Success:
+![Imgur](https://i.imgur.com/kk1Bcnt.png)
+
+### Failure:
+![Imgur](https://i.imgur.com/3SmtJQF.png)
