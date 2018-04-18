@@ -7,8 +7,8 @@ export default {
   entry: 'src/uselesscss.js',
   targets: [
     {
-      dest: 'dist/uselesscss.es.js',
-      format: 'es'
+      dest: 'dist/uselesscss.js',
+      format: 'cjs'
     }
   ],
   plugins: [
