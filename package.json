@@ -1,6 +1,6 @@
 {
   "name": "useless-css-checker",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "license": "MIT",
   "description": "Unused CSS Checker. Built off of PurifyCSS",
   "main": "dist/main.js",
