@@ -1,0 +1,41 @@
+{
+  "name": "useless-css-checker",
+  "version": "0.1.0",
+  "description": "Unused CSS Checker. Built off of PurifyCSS",
+  "main": "./lib/UselessCssChecker.js",
+  "scripts": {
+    "test": "jest tests/index.spec.js",
+    "dev": "rollup -c rollup.config.js -w",
+    "build": "rollup -c rollup.config.js",
+    "lint": "eslint src",
+    "prepush": "yarn lint && yarn build && yarn test",
+    "prepublish": "yarn build"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "clean-css": "^4.0.12",
+    "colors": "^1.2.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "glob": "^7.1.1",
+    "husky": "^0.14.3",
+    "jest": "^19.0.2",
+    "node-emoji": "^1.8.1",
+    "rework": "^1.0.1",
+    "rollup": "^0.41.6",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-builtins": "^2.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-watch": "^3.2.2",
+    "uglify-js": "^3.0.6",
+    "yargs": "^8.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ssulivan11/useless-css-checker.git"
+  }
+}
