@@ -3,13 +3,13 @@
   "version": "0.1.5",
   "license": "MIT",
   "description": "Unused CSS Checker. Built off of PurifyCSS",
-  "main": "./dist/main.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "jest tests/index.spec.js",
     "build": "webpack -p",
     "lint": "eslint src",
-    "prepush": "yarn build && yarn test",
-    "prepublish": "yarn lint && yarn build"
+    "prepush": "yarn lint && yarn build && yarn test",
+    "prepublish": "yarn build"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
