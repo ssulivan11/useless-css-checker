@@ -7,8 +7,8 @@
     "test": "jest tests/index.spec.js",
     "build": "webpack -p",
     "lint": "eslint src",
-    "prepush": "yarn lint && yarn build && yarn test",
-    "prepublish": "yarn build"
+    "prepush": "yarn build && yarn test",
+    "prepublish": "yarn lint && yarn build"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
