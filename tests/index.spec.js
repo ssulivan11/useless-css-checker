@@ -1,5 +1,5 @@
 /* eslint-env jest */
-const uselessCss = require('../dist/uselesscss.js')
+const uselessCss = require('../dist/main.js')
 
 describe('Useless Class Checker', () => {
   const options = {

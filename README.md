@@ -5,13 +5,12 @@ A function that takes content (HTML/JS/etc) and CSS, and returns the validity of
 ## Installation  
 
 ```bash
-npm i -D useless-css-checker
-yarn ass useless-css-checker -D
+yarn add useless-css-checker -D
 ```
 ## Usage
 
 ```javascript
-const findUselessCss = require('wasted-css')
+const uselessCss = require('useless-css-checker')
 
 module.exports.csscheck = () => {
   const content = [
@@ -28,6 +27,6 @@ module.exports.csscheck = () => {
     validationProcessExit: true,
     whitelist: ['*white-list-testing*']
   }
-  findUselessCss(content, css, options, true)
+  uselessCss(content, css, options)
 }
 ```
