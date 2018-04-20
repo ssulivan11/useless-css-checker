@@ -1,6 +1,6 @@
 import glob from 'glob'
 
-const UglifyJS = require('uglify-js')
+const UglifyJS = require('uglify-js-webpack-build')
 const fs = require('fs')
 
 const compressCode = (code) => {
