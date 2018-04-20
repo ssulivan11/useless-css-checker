@@ -5870,7 +5870,7 @@ uglify-js@^2.6:
   optionalDependencies:
     uglify-to-browserify "~1.0.0"
 
-uglify-js@^3.0.6:
+uglify-js@^3.3.21:
   version "3.3.21"
   resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.3.21.tgz#851a34cbb31840ecb881968ed07dd3a61e7264a0"
   dependencies:
@@ -6120,10 +6120,6 @@ webpack-cli@^2.0.14:
     yargs "^11.1.0"
     yeoman-environment "^2.0.0"
     yeoman-generator "^2.0.3"
-
-webpack-node-externals@^1.7.2:
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/webpack-node-externals/-/webpack-node-externals-1.7.2.tgz#6e1ee79ac67c070402ba700ef033a9b8d52ac4e3"
 
 webpack-sources@^1.0.1, webpack-sources@^1.1.0:
   version "1.1.0"

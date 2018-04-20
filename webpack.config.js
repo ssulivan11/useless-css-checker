@@ -1,4 +1,3 @@
-const nodeExternals = require('webpack-node-externals')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
@@ -9,7 +8,6 @@ module.exports = {
     libraryTarget: 'commonjs-module',
     libraryExport: 'default'
   },
-  externals: [nodeExternals()],
   module: {
     rules: [
       {
