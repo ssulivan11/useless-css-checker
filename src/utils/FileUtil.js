@@ -32,7 +32,6 @@ export const concatFiles = (files, options) =>
     return `${total}${code} `
   }, '')
 
-
 export const getFilesFromPatternArray = (fileArray) => {
   const sourceFiles = {}
   for (const string of fileArray) {

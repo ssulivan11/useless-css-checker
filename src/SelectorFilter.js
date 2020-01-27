@@ -1,6 +1,7 @@
 import { getAllWordsInSelector } from './utils/ExtractWordsUtil'
 
-const isWildcardWhitelistSelector = (selector) => selector[0] === '*' && selector[selector.length - 1] === '*'
+const isWildcardWhitelistSelector = (selector) =>
+  selector[0] === '*' && selector[selector.length - 1] === '*'
 
 const hasWhitelistMatch = (selector, whitelist) => {
   for (const el of whitelist) {
@@ -27,7 +28,9 @@ class SelectorFilter {
 
       if (isWildcardWhitelistSelector(whitelistSelector)) {
         // If '*button*' then push 'button' onto list.
-        this.wildcardWhitelist.push(whitelistSelector.substr(1, whitelistSelector.length - 2))
+        this.wildcardWhitelist.push(
+          whitelistSelector.substr(1, whitelistSelector.length - 2)
+        )
       } else {
         getAllWordsInSelector(whitelistSelector).forEach((word) => {
           this.contentWords[word] = true
@@ -41,9 +44,7 @@ class SelectorFilter {
   }
 
   filterSelectors(selectors) {
-    const contentWords = this.contentWords
-    const rejectedSelectors = this.rejectedSelectors
-    const wildcardWhitelist = this.wildcardWhitelist
+    const { contentWords, rejectedSelectors, wildcardWhitelist } = this
     const usedSelectors = []
 
     selectors.forEach((selector) => {

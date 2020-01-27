@@ -28,7 +28,7 @@ export const getAllWordsInSelector = (selector) => {
   const words = []
 
   for (const letter of selector) {
-    if (skipNextWord && !(/[ #.]/).test(letter)) continue
+    if (skipNextWord && !/[ #.]/.test(letter)) continue
     // If pseudoclass or universal selector, skip the next word
     if (/[:*]/.test(letter)) {
       addWord(words, word)

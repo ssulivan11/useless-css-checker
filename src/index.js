@@ -24,7 +24,6 @@ const getOptions = (options = {}) => {
   return opt
 }
 
-
 const minify = (cssSource, options) =>
   new CleanCss(options).minify(cssSource).styles
 

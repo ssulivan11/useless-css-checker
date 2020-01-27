@@ -1,7 +1,9 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-  node: { fs: 'empty' },
+  node: {
+    fs: 'empty'
+  },
   target: 'node',
   output: {
     library: '',
@@ -14,12 +16,13 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
       }
     ]
   },
-  plugins: [
-    new CleanWebpackPlugin('dist')
-  ]
+  plugins: [new CleanWebpackPlugin('dist')]
 }
