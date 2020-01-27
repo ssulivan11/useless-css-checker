@@ -13,7 +13,7 @@ const OPTIONS = {
   validationOutput: false,
   validationProcessExit: false,
   whitelist: [],
-  cleanCssOptions: {},
+  cleanCssOptions: {}
 }
 
 const getOptions = (options = {}) => {
@@ -56,7 +56,7 @@ const uselessCssChecker = (searchThrough, css, options) => {
   if (options.rejected && selectorFilter.rejectedSelectors.length) {
     PrintUtil.printRejected(
       selectorFilter.rejectedSelectors,
-      minify(source, options.cleanCssOptions).length,
+      minify(source, options.cleanCssOptions).length
     )
     if (options.validationProcessExit) process.exit(1)
   }

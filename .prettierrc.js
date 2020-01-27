@@ -2,9 +2,9 @@ const prettierConfig = {
   bracketSpacing: true,
   jsxBracketSameLine: true,
   singleQuote: true,
-  trailingComma: 'all',
+  trailingComma: false,
   arrowParens: 'always',
-  semi: false,
+  semi: false
 }
 
 module.exports = prettierConfig

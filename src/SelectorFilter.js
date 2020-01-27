@@ -29,7 +29,7 @@ class SelectorFilter {
       if (isWildcardWhitelistSelector(whitelistSelector)) {
         // If '*button*' then push 'button' onto list.
         this.wildcardWhitelist.push(
-          whitelistSelector.substr(1, whitelistSelector.length - 2),
+          whitelistSelector.substr(1, whitelistSelector.length - 2)
         )
       } else {
         getAllWordsInSelector(whitelistSelector).forEach((word) => {

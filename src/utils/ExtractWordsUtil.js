@@ -6,7 +6,7 @@ export const getAllWordsInContent = (content) => {
   const used = {
     // Always include html and body.
     html: true,
-    body: true,
+    body: true
   }
   const words = content.split(/[^a-z]/g)
   for (const word of words) {

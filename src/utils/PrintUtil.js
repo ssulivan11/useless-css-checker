@@ -9,8 +9,7 @@ const printInfo = (endingLength) => {
     100
   ).toFixed(1)
   console.log(
-    `> This cleanup could reduce your file size by ~ ${sizeReduction}%\n`
-      .yellow,
+    `> This cleanup could reduce your file size by ~ ${sizeReduction}%\n`.yellow
   )
 }
 
@@ -21,15 +20,14 @@ const printRejected = (rejectedTwigs, endingLength = 0) => {
   ).toFixed(1)
   console.log('\n> Useless CSS Found! - Validation Failed'.red.bold)
   console.log(
-    '  ________________________________________________________________\n',
+    '  ________________________________________________________________\n'
   )
   console.log(
-    '  Please review or add to whitelist definitions for the CSS below:\n',
+    '  Please review or add to whitelist definitions for the CSS below:\n'
   )
   console.log(`  ${rejectedTwigs.join('\n  ')}\n\n`)
   console.log(
-    `  This cleanup could reduce your file size by ~ ${sizeReduction}%\n`
-      .yellow,
+    `  This cleanup could reduce your file size by ~ ${sizeReduction}%\n`.yellow
   )
   return rejectedTwigs
 }
@@ -37,12 +35,12 @@ const printRejected = (rejectedTwigs, endingLength = 0) => {
 const printValidated = (files) => {
   console.log('\n> No Useless CSS - Validation Passed'.green.bold)
   console.log(
-    '  ________________________________________________________________\n',
+    '  ________________________________________________________________\n'
   )
   console.log(
     `  ${emoji.get(':white_check_mark:')}  ${files.join(
-      `\n  ${emoji.get(':white_check_mark:')}  `,
-    )}\n`,
+      `\n  ${emoji.get(':white_check_mark:')}  `
+    )}\n`
   )
   return true
 }
@@ -55,5 +53,5 @@ export default {
   printInfo,
   printRejected,
   printValidated,
-  startLog,
+  startLog
 }

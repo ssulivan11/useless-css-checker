@@ -63,5 +63,5 @@ export const filesToSource = (files, type) => {
 export default {
   concatFiles,
   filesToSource,
-  getFilesFromPatternArray,
+  getFilesFromPatternArray
 }

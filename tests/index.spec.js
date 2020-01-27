@@ -7,7 +7,7 @@ describe('Useless Class Checker', () => {
     output: './coverage/outputShim',
     validationOutput: true,
     validationProcessExit: false,
-    whitelist: ['*color-swatch-option*'],
+    whitelist: ['*color-swatch-option*']
   }
 
   console.log = jest.fn()
