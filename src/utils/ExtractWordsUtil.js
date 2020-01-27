@@ -1,50 +1,50 @@
 const addWord = (words, word) => {
-  if (word) words.push(word)
-}
+  if (word) words.push(word);
+};
 
 export const getAllWordsInContent = (content) => {
   const used = {
     // Always include html and body.
     html: true,
-    body: true
-  }
-  const words = content.split(/[^a-z]/g)
+    body: true,
+  };
+  const words = content.split(/[^a-z]/g);
   for (const word of words) {
-    used[word] = true
+    used[word] = true;
   }
-  return used
-}
+  return used;
+};
 
 export const getAllWordsInSelector = (selector) => {
   // Remove attr selectors. "a[href...]"" will become "a".
-  selector = selector.replace(/\[(.+?)\]/g, '').toLowerCase()
+  selector = selector.replace(/\[(.+?)\]/g, '').toLowerCase();
   // If complex attr selector (has a bracket in it) just leave
   // the selector in. ¯\_(ツ)_/¯
   if (selector.includes('[') || selector.includes(']')) {
-    return []
+    return [];
   }
-  let skipNextWord = false
-  let word = ''
-  const words = []
+  let skipNextWord = false;
+  let word = '';
+  const words = [];
 
   for (const letter of selector) {
-    if (skipNextWord && !(/[ #.]/).test(letter)) continue
+    if (skipNextWord && !(/[ #.]/).test(letter)) continue;
     // If pseudoclass or universal selector, skip the next word
     if (/[:*]/.test(letter)) {
-      addWord(words, word)
-      word = ''
-      skipNextWord = true
-      continue
+      addWord(words, word);
+      word = '';
+      skipNextWord = true;
+      continue;
     }
     if (/[a-z]/.test(letter)) {
-      word += letter
+      word += letter;
     } else {
-      addWord(words, word)
-      word = ''
-      skipNextWord = false
+      addWord(words, word);
+      word = '';
+      skipNextWord = false;
     }
   }
 
-  addWord(words, word)
-  return words
-}
+  addWord(words, word);
+  return words;
+};
