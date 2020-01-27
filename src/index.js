@@ -1,9 +1,9 @@
-import CleanCss from 'clean-css';
-import CssTreeWalker from './CssTreeWalker';
-import FileUtil from './utils/FileUtil';
-import PrintUtil from './utils/PrintUtil';
-import SelectorFilter from './SelectorFilter';
-import { getAllWordsInContent } from './utils/ExtractWordsUtil';
+import CleanCss from 'clean-css'
+import CssTreeWalker from './CssTreeWalker'
+import FileUtil from './utils/FileUtil'
+import PrintUtil from './utils/PrintUtil'
+import SelectorFilter from './SelectorFilter'
+import { getAllWordsInContent } from './utils/ExtractWordsUtil'
 
 const OPTIONS = {
   output: false,
@@ -14,41 +14,41 @@ const OPTIONS = {
   validationProcessExit: false,
   whitelist: [],
   cleanCssOptions: {},
-};
+}
 
 const getOptions = (options = {}) => {
-  const opt = {};
+  const opt = {}
   for (const option in OPTIONS) {
-    if (opt) opt[option] = options[option] || OPTIONS[option];
+    if (opt) opt[option] = options[option] || OPTIONS[option]
   }
-  return opt;
-};
+  return opt
+}
 
-
-const minify = (cssSource, options) => new CleanCss(options).minify(cssSource).styles;
+const minify = (cssSource, options) =>
+  new CleanCss(options).minify(cssSource).styles
 
 const uselessCssChecker = (searchThrough, css, options) => {
-  options = getOptions(options);
+  options = getOptions(options)
 
-  const cssString = FileUtil.filesToSource(css, 'css');
-  const content = FileUtil.filesToSource(searchThrough, 'content');
+  const cssString = FileUtil.filesToSource(css, 'css')
+  const content = FileUtil.filesToSource(searchThrough, 'content')
 
-  PrintUtil.startLog(minify(cssString).length);
+  PrintUtil.startLog(minify(cssString).length)
 
-  const wordsInContent = getAllWordsInContent(content);
-  const selectorFilter = new SelectorFilter(wordsInContent, options.whitelist);
-  const tree = new CssTreeWalker(cssString, [selectorFilter]);
+  const wordsInContent = getAllWordsInContent(content)
+  const selectorFilter = new SelectorFilter(wordsInContent, options.whitelist)
+  const tree = new CssTreeWalker(cssString, [selectorFilter])
 
-  tree.beginReading();
-  let source = tree.toString();
-  source = options.minify ? minify(source, options.cleanCssOptions) : source;
+  tree.beginReading()
+  let source = tree.toString()
+  source = options.minify ? minify(source, options.cleanCssOptions) : source
 
   // Option info = true
   if (options.info) {
     if (options.minify) {
-      PrintUtil.printInfo(source.length);
+      PrintUtil.printInfo(source.length)
     } else {
-      PrintUtil.printInfo(minify(source, options.cleanCssOptions).length);
+      PrintUtil.printInfo(minify(source, options.cleanCssOptions).length)
     }
   }
 
@@ -57,16 +57,16 @@ const uselessCssChecker = (searchThrough, css, options) => {
     PrintUtil.printRejected(
       selectorFilter.rejectedSelectors,
       minify(source, options.cleanCssOptions).length,
-    );
-    if (options.validationProcessExit) process.exit(1);
+    )
+    if (options.validationProcessExit) process.exit(1)
   }
 
   // Option validationOutput = true && rejected = false
   if (!selectorFilter.rejectedSelectors.length && options.validationOutput) {
-    PrintUtil.printValidated(css);
+    PrintUtil.printValidated(css)
   }
 
-  return true;
-};
+  return true
+}
 
-export default uselessCssChecker;
+export default uselessCssChecker

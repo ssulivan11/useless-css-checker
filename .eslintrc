@@ -1,7 +1,9 @@
 {
   "parser": "babel-eslint",
-  "extends": "airbnb/base",
-  "env": {},
+  "extends": [
+    "airbnb/base",
+    "prettier"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "modules": true
@@ -12,11 +14,12 @@
       "error",
       "always"
     ],
+    "semi": 0,
     "no-param-reassign": 0,
     "class-methods-use-this": 0,
     "comma-dangle": 0,
     "no-unused-vars": 0,
-    "no-console": 0,
+    "no-console": 1,
     "space-before-function-paren": 0,
     "no-underscore-dangle": [
       "error",

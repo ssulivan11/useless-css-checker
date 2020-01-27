@@ -7,7 +7,7 @@ describe('Useless Class Checker', () => {
     output: './coverage/outputShim',
     validationOutput: true,
     validationProcessExit: false,
-    whitelist: ['*color-swatch-option*']
+    whitelist: ['*color-swatch-option*'],
   }
 
   console.log = jest.fn()
@@ -17,7 +17,7 @@ describe('Useless Class Checker', () => {
     const css = ['valid/simple.css']
 
     uselessCss(content, css, options)
-    expect(console.log).toHaveBeenCalled();
+    expect(console.log).toHaveBeenCalled()
   })
 
   it('invalid', () => {
@@ -25,6 +25,6 @@ describe('Useless Class Checker', () => {
     const css = ['invalid/simple.css']
 
     uselessCss(content, css, options)
-    expect(console.log).toHaveBeenCalled();
+    expect(console.log).toHaveBeenCalled()
   })
 })
