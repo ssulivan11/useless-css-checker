@@ -44,9 +44,7 @@ class SelectorFilter {
   }
 
   filterSelectors(selectors) {
-    const { contentWords } = this
-    const { rejectedSelectors } = this
-    const { wildcardWhitelist } = this
+    const { contentWords, rejectedSelectors, wildcardWhitelist } = this
     const usedSelectors = []
 
     selectors.forEach((selector) => {
