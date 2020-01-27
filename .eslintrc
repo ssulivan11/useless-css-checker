@@ -19,7 +19,7 @@
     "class-methods-use-this": 0,
     "comma-dangle": 0,
     "no-unused-vars": 0,
-    "no-console": 1,
+    "no-console": 0,
     "space-before-function-paren": 0,
     "no-underscore-dangle": [
       "error",
