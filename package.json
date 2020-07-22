@@ -9,18 +9,18 @@
     "build": "webpack -p",
     "lint": "eslint src --fix",
     "prettier": "prettier --write '**/*.js'",
-    "prepublish": "yarn build"
+    "prepublish": "npm run build"
   },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "yarn build && yarn test"
+      "pre-push": "npm run build && npm run test"
     }
   },
   "lint-staged": {
     "*.js": [
-      "yarn prettier",
-      "yarn lint"
+      "npm run prettier",
+      "npm run lint"
     ]
   },
   "dependencies": {
