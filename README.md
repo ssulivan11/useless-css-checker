@@ -1,3 +1,5 @@
+> DEPRECATED - feel free to use, but some known issues and the outdated state of this package do not warrant its use in pipelines or valid checks
+
 # Useless CSS Checker
 
 A function that takes content (HTML/JS/etc) and CSS, and returns the validity of your unused selectors.
