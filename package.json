@@ -50,10 +50,6 @@
     "webpack-cli": "^3.3.10",
     "webpack-node-externals": "^1.7.2"
   },
-  "resolutions": {
-    "sha.js": "2.4.11",
-    "upath": "1.2.0"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/ssulivan11/useless-css-checker.git"
